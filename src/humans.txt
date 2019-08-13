@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# CONTRIBUTORS
+    # <name>      -- <roles>                  -- <github>
+    Antoine AMARA -- designer and developer -- antoine-amara
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Javacript (ES6), Reset.css, Webpack4
