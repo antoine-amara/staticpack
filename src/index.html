@@ -11,8 +11,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/main.css">
+  <link href="<%=htmlWebpackPlugin.files.chunks.main.css %>" rel="stylesheet" />
 </head>
 
 <body>
@@ -20,7 +19,7 @@
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
   <div class="hello">Hello Colorspace</div>
-  <script src="js/index.js"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 
 </html>
