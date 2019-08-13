@@ -1,0 +1,17 @@
+{
+  "name": "colorspace-developer-portfolio",
+  "version": "0.0.1",
+  "description": "An elegant and reusable free template made for my personal portfolio. It used a mobile first approch and a rich colorspace style.",
+  "main": "index.js",
+  "repository": "git@antoine.lab:antoine/colorspace-developer-portfolio.git",
+  "author": "Antoine Amara <amara.antoine@gmail.com>",
+  "license": "GPLv3.0",
+  "private": true,
+  "scripts": {
+    "serve": "echo \"serve NOT IMPLEMENTED\"",
+    "serve:dev": "echo \"serve:dev NOT IMPLEMENTED\"",
+    "lint": "echo \"lint NOT IMPLEMENTED\"",
+    "prettier": "echo \"prettier NOT IMPLEMENTED\"",
+    "test": "echo \"test NOT IMPLEMENTED\""
+  }
+}

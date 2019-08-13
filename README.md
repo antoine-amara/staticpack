@@ -8,4 +8,34 @@
 A reusable development environment for a 100% static website or template.
 
 The website is just pure HTML5/CSS3 and Javascript. The final build is managed and created with Webpack4.
-The develoment environment with debug tools and the server is running with docker containers.
+This repo gives a complete development environment for developers who want to construct a static website. All this stuff runs with makefiles command inside a Docker containers. Moreover, we use webpack to bundle the website and webpack-dev-server to run a development server.
+
+## Run the development environment
+
+The first time you want to run the development environment, you need to build it and install his dependencies. For that, just run the command:
+
+```shell
+make init
+```
+
+Note: this command run the environment in watch mode, so, a live reload is available in the browser when you update files.
+
+If the environment was already initialized, just run the `watch` command to rerun it.
+
+```shell
+make watch
+```
+
+Finally, when you want to stop the environment, run the `destroy` command:
+
+```shell
+make destroy
+```
+
+Note this command will stop the development environment but it doesn't destroy dependencies or configurations.
+
+If you want to see all available commands to manipulate the development environment, just use `help` command:
+
+```shell
+make help
+```
