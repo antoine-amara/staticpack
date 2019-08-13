@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  node:
+    image: nodejs-yarn
+    build:
+      context: ./Docker/node
+    volumes:
+      - ./:/workspace/
+    working_dir: /workspace/
+    networks:
+      - public
+    ports:
+      - "9000:9000"
+      - "9042:9042"
+    environment:
+      - NODE_ENV=development
+    command: yarn serve:dev
+              
+networks:
+  public:
+                  
