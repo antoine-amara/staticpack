@@ -51,6 +51,18 @@ module.exports = {
             name: 'images/[hash]-[name].[ext]'
           }
         }]
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'fonts/[name].[ext]',
+              publicPath: './src/'
+            }
+          }
+        ]
       }
     ]
   },
