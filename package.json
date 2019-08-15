@@ -30,6 +30,8 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-inline-svg-plugin": "^1.2.4",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-loader": "^3.0.0",
@@ -37,7 +39,8 @@
     "precise-commits": "^1.0.2",
     "prettier": "^1.18.2",
     "style-loader": "^1.0.0",
-    "webpack": "^4.39.1",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"
   }
