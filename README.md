@@ -39,3 +39,19 @@ If you want to see all available commands to manipulate the development environm
 ```shell
 make help
 ```
+
+## Create a production ready archive
+
+To build and package an optimized bundle for production just used the `package` command.
+
+```shell
+make package
+```
+
+a `website.zip` will be created into the root folder of your development environment. This archive contains all the assets you need and is ready to be unzipped into your `www` folder in production.
+
+If you want to clean your development environment and delete the `dist` folder and the `website.zip` just use the following command:
+
+```shell
+make clean
+```

@@ -82,3 +82,6 @@ typings/
 
 # Webpack build directory
 dist/
+
+# Website archive for production output
+website.zip

@@ -12,6 +12,7 @@ services:
       - public
     ports:
       - "9000:9000"
+      - "3000:3000"
       - "9042:9042"
     environment:
       - NODE_ENV=development
