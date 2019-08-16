@@ -9,9 +9,9 @@
   "private": true,
   "scripts": {
     "serve": "yarn build && http-server ./dist -a 0.0.0.0 -p 3000",
-    "serve:dev": "webpack-dev-server --config webpack.config.js",
-    "package": "echo \"test NOT IMPLEMENTED\"",
-    "build": "echo \"test NOT IMPLEMENTED\"",
+    "serve:dev": "webpack-dev-server --config webpack.dev.js",
+    "package": "rm -f website.zip && yarn build && cd dist/ && bestzip ../website.zip *",
+    "build": "webpack --config webpack.prod.js",
     "lint": "eslint --fix ./src/js/*.js",
     "prettier": "precise-commits && eslint --fix ./src/js/*.js",
     "test": "echo \"test NOT IMPLEMENTED\""
@@ -21,6 +21,7 @@
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
+    "bestzip": "^2.1.4",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
@@ -33,15 +34,19 @@
     "file-loader": "^4.2.0",
     "html-webpack-inline-svg-plugin": "^1.2.4",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
     "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "postcss-reporter": "^6.0.1",
     "precise-commits": "^1.0.2",
     "prettier": "^1.18.2",
     "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
   }
 }

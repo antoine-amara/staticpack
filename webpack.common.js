@@ -1,16 +1,15 @@
 // webpack v4
+// comon configuration between development and production bundle.
 
 const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const { HotModuleReplacementPlugin } = require('webpack')
 
 module.exports = {
   entry: { main: './src/js/index.js' },
-  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js'
@@ -91,19 +90,6 @@ module.exports = {
       { from: './src/site.webmanifest', to: './' },
       { from: './src/tile-wide.png', to: './' },
       { from: './src/tile.png', to: './' }
-    ]),
-    new HotModuleReplacementPlugin({})
-  ],
-  devServer: {
-    host: '0.0.0.0',
-    port: 9000,
-    hot: true,
-    overlay: true,
-    contentBase: [
-      './src/',
-      './src/css/',
-      './src/js/'
-    ],
-    watchContentBase: true
-  }
+    ])
+  ]
 }
