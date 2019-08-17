@@ -1,19 +1,18 @@
 {
-  "name": "colorspace-developer-portfolio",
-  "version": "0.0.1",
-  "description": "An elegant and reusable free template made for my personal portfolio. It used a mobile first approch and a rich colorspace style.",
-  "main": "index.js",
-  "repository": "git@antoine.lab:antoine/colorspace-developer-portfolio.git",
+  "name": "staticpack",
+  "description": "A reusable development environment for a 100% static website or template.",
+  "repository": "https://github.com/antoine-amara/staticpack",
+  "version": "0.1.0",
   "author": "Antoine Amara <amara.antoine@gmail.com>",
   "license": "GPLv3.0",
   "private": true,
   "scripts": {
+    "release": "standard-version",
     "serve": "yarn build && http-server ./dist -a 0.0.0.0 -p 3000",
     "serve:dev": "webpack-dev-server --config webpack.dev.js",
     "package": "rm -f website.zip && yarn build && cd dist/ && bestzip ../website.zip *",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint --fix ./src/js/*.js",
-    "prettier": "precise-commits && eslint --fix ./src/js/*.js",
     "test": "echo \"test NOT IMPLEMENTED\""
   },
   "devDependencies": {
@@ -40,7 +39,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-reporter": "^6.0.1",
     "precise-commits": "^1.0.2",
-    "prettier": "^1.18.2",
+    "standard-version": "^7.0.0",
     "style-loader": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^2.1.0",

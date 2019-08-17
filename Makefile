@@ -32,9 +32,6 @@ style:	## run the linter to check code formating.
 test:	## run the unit tests to check javascript libs.
 	${DC} run --rm node ${YN} test
 
-format:	## format the javascript code to respect lint rules.
-	${DC} run --rm node ${YN} prettier
-
 restart:	## restart the development environment. This command can be used only on watch mode.
 	${DC} stop
 	${MAKE} watch
@@ -51,11 +48,14 @@ logs:	## display logs from the development server. This command can be used only
 destroy:	## switch off and destroy the development server instance. This command can be used only on watch mode.
 	${DC} down
 
+release:	## create a release, increment the version into package.json, create the Changelog, and finally create a git tag and commit it.
+	${DC} run --rm node ${YN} release
+
 help:		## show this help.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
 .PHONY: 
-	init run watch package clean check style test format restart command dependencies logs destroy
+	init run watch package clean check style test restart command dependencies logs destroy release
 .SILENT: 
-	init run watch package clean check style test format restart command dependencies logs destroy
+	init run watch package clean check style test restart command dependencies logs destroy release
