@@ -1,4 +1,6 @@
-# Staticpack
+<p align="center">
+  <img width="371" height="127" src="./logo.png">
+</p>
 
 ![Licence Badge](https://badgen.net/badge/License/GPLv3.0/green)
 ![JS Style](https://badgen.net/badge/JS/Standard/yellow)
@@ -8,7 +10,7 @@
 A reusable development environment for a 100% static website or template.
 
 The website is just pure HTML5/CSS3 and Javascript. The final build is managed and created with Webpack4.
-This repo gives a complete development environment for developers who want to construct a static website. All this stuff runs with makefiles command inside a Docker containers. Moreover, we use webpack to bundle the website and webpack-dev-server to run a development server.
+This repo gives a complete development environment for developers who want to construct a static website. All this stuff runs with makefiles command inside Docker containers. Moreover, we use webpack to bundle the website and webpack-dev-server to run a development server.
 
 ## Run the development environment
 
