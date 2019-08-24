@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 0.2.0 (2019-08-24)
+
+
+### Bug Fixes
+
+* add github link to github icon ([f352dd6](https://github.com/antoine-amara/staticpack/commit/f352dd6))
+* adjust styling for footer positioning ([512f5a9](https://github.com/antoine-amara/staticpack/commit/512f5a9))
+
+
+### Features
+
+* add a presentationnal index page ([def58b7](https://github.com/antoine-amara/staticpack/commit/def58b7))
+* add a webpack loader to be able to load fonts ([ce7108d](https://github.com/antoine-amara/staticpack/commit/ce7108d))
+* add editorconfig to follow conventions ([e552de0](https://github.com/antoine-amara/staticpack/commit/e552de0))
+* add webpack loaders to manage images and svgs ([5053abd](https://github.com/antoine-amara/staticpack/commit/5053abd))
+* create a development environment with docker ([1e66a69](https://github.com/antoine-amara/staticpack/commit/1e66a69))
+* create a webpack configuration for development ([7059e1c](https://github.com/antoine-amara/staticpack/commit/7059e1c))
+* create a webpack configuration to run the website to production ([025ee84](https://github.com/antoine-amara/staticpack/commit/025ee84))
+* create the website folder structure ([cab9da8](https://github.com/antoine-amara/staticpack/commit/cab9da8))
+
 ## 0.1.0 (2019-08-17)
 
 
