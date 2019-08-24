@@ -1,140 +1,140 @@
 @font-face {
-    font-family: 'True Lies';
-    src: url('/fonts/TrueLies.ttf') format('truetype');
+  font-family: 'True Lies';
+  src: url('/fonts/TrueLies.ttf') format('truetype');
 }
 
 /* Variables */
 
 :root {
-    --staticpack-blue: #007abc;
-    --staticpack-blue-light: #8dd4fa;
-    --staticpack-white: #ffffff;
-    --staticpack-black: #212529;
-
-    --staticpack-xs-spacing: 5px;
-    --staticpack-md-spacing: 20px;
+  --staticpack-blue: #007abc;
+  --staticpack-blue-light: #8dd4fa;
+  --staticpack-white: #ffffff;
+  --staticpack-black: #212529;
+  
+  --staticpack-xs-spacing: 5px;
+  --staticpack-md-spacing: 20px;
 }
 
 .browserupgrade {
-    margin: 0.2em 0;
-    background: var(--colorspace-light-color);
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: var(--colorspace-light-color);
+  padding: 0.2em 0;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: var(--staticpack-black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--staticpack-black);
 }
 
 h2 {
-    color: var(--staticpack-blue);
+  color: var(--staticpack-blue);
 }
 
 ul {
-    list-style: none; /* Remove default bullets */
-  }
-  
+  list-style: none; /* Remove default bullets */
+}
+
 ul li::before {
-    content: "\2022";
-    color: var(--staticpack-blue);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+  content: "\2022";
+  color: var(--staticpack-blue);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .truelie-font {
-    font-family: 'True Lies'
+  font-family: 'True Lies'
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    color: var(--staticpack-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--staticpack-white);
 }
 
 .header--big-title {
-    font-size: 3.5em;
+  font-size: 3.5em;
 }
 
 .repo-infos {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    margin: var(--staticpack-md-spacing);
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  margin: var(--staticpack-md-spacing);
+  display: flex;
+  align-items: center;
 }
 
 .repos-infos__license {
-    background-color: var(--staticpack-white);
-    border-radius: 20px;
-    padding: 5px;
-    font-size: 10px;
+  background-color: var(--staticpack-white);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 10px;
 }
 
 .header__pack-text,
 .footer__pack-text {
-    color: var(--staticpack-blue);
-    background-color: var(--staticpack-white);
+  color: var(--staticpack-blue);
+  background-color: var(--staticpack-white);
 }
 
 .project-description {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .footer__pack-text {
-    margin-right: var(--staticpack-xs-spacing);
+  margin-right: var(--staticpack-xs-spacing);
 }
 
 header, footer {
-    background-color: var(--staticpack-blue);
+  background-color: var(--staticpack-blue);
 }
 
 section {
-    padding: var(--staticpack-md-spacing);
+  padding: var(--staticpack-md-spacing);
 }
 
 footer {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--staticpack-white);
-    margin-top: auto;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--staticpack-white);
+  margin-top: auto;
 }
 
 .repo-infos svg,
 footer svg {
-    width: 25px;
-    min-height: 25px;
-    margin-right: var(--staticpack-xs-spacing);
-    margin-left: var(--staticpack-xs-spacing);
-    fill: var(--staticpack-blue-light);
+  width: 25px;
+  min-height: 25px;
+  margin-right: var(--staticpack-xs-spacing);
+  margin-left: var(--staticpack-xs-spacing);
+  fill: var(--staticpack-blue-light);
 }
 
 .repo-infos svg {
-    margin-left: var(--staticpack-md-spacing);
+  margin-left: var(--staticpack-md-spacing);
 }
 
 .repos-infos__license svg {
-    fill: var(--staticpack-black) !important;
-    margin-left: var(--staticpack-xs-spacing);
+  fill: var(--staticpack-black) !important;
+  margin-left: var(--staticpack-xs-spacing);
 }
 
 .repo-info__github-logo:hover svg {
-    cursor: pointer;
-    fill: var(--staticpack-white);
+  cursor: pointer;
+  fill: var(--staticpack-white);
 }
 
 .strong-text {
-    font-weight: 800;
-    color: var(--staticpack-blue);
+  font-weight: 800;
+  color: var(--staticpack-blue);
 }
 
 @import './bootstrap-reboot.css';
