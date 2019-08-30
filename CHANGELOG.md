@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/antoine-amara/staticpack/compare/v0.2.0...v0.2.1) (2019-08-30)
+
+
+### Bug Fixes
+
+* install @babel/preset to work with babel 7 ([7915a5e](https://github.com/antoine-amara/staticpack/commit/7915a5e))
+
 ## 0.2.0 (2019-08-24)
 
 
