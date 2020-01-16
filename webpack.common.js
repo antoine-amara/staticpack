@@ -11,7 +11,7 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
 module.exports = {
   entry: { main: './src/js/index.js' },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(process.cwd(), 'dist'),
     filename: '[name].[hash].js'
   },
   module: {
@@ -35,7 +35,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               config: {
-                path: path.resolve(__dirname, 'postcss.config.js')
+                path: path.resolve(process.cwd(), 'postcss.config.js')
               }
             }
           }
@@ -46,8 +46,9 @@ module.exports = {
         use: [{
           loader: 'url-loader',
           options: {
-            limit: 8000, // Convert images < 8kb to base64 strings
-            name: 'images/[hash]-[name].[ext]'
+            limit: 8192, // Convert images < 8kb to base64 strings
+            name: '[hash]-[name].[ext]',
+            outputPath: 'img'
           }
         }]
       },
@@ -66,9 +67,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['./dist/**/*']
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
     }),
