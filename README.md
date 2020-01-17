@@ -5,7 +5,8 @@
 ![Licence Badge](https://badgen.net/badge/License/GPLv3.0/green)
 ![JS Style](https://badgen.net/badge/JS/Standard/yellow)
 ![CSS Style](https://badgen.net/badge/CSS/BEM/blue)
-![Webpack](https://badgen.net/badge/Webpack/v4/blue)
+![Webpack](https://badgen.net/badge/webpack/v4/blue)
+![Docker](https://badgen.net/badge/icon/docker-compose?icon=docker&label)
 
 A reusable development environment for a 100% static website or template.
 
@@ -14,19 +15,25 @@ This repo gives a complete development environment for developers who want to co
 
 ## Run the development environment
 
+**requirements**: to run the environment, you need `docker` and `docker-compose` installed on your computer, if you don't have them follow the next links:
+* [how to install docker](https://docs.docker.com/install/)
+* [how to install docker-compose](https://docs.docker.com/compose/install/)
+
 The first time you want to run the development environment, you need to build it and install his dependencies. For that, just run the command:
 
 ```shell
 make init
 ```
 
-Note: this command run the environment in watch mode, so, a live reload is available in the browser when you update files.
+Note: this command runs the environment in watch mode, so, a live reload is available in the browser when you update files.
 
 If the environment was already initialized, just run the `watch` command to rerun it.
 
 ```shell
 make watch
 ```
+
+**The development server will be available on [localhost:9000](http://localhost:9000)**
 
 Finally, when you want to stop the environment, run the `destroy` command:
 
@@ -41,6 +48,16 @@ If you want to see all available commands to manipulate the development environm
 ```shell
 make help
 ```
+
+## Test the website in production mode
+
+Webpack can bundle your website for production with some optimization, to be sure the website work in this mode you can run the command:
+
+```shell
+make run
+```
+
+**A server will be available on [localhost:3000](http://localhost:3000)**
 
 ## Create a production ready archive
 
