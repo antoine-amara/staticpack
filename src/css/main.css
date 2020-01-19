@@ -45,6 +45,10 @@ ul li::before {
   margin-left: -1em;
 }
 
+ul li > span {
+  font-weight: 800;
+}
+
 .truelie-font {
   font-family: 'True Lies'
 }
