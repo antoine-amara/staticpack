@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/antoine-amara/staticpack/compare/v0.2.1...v0.3.0) (2020-01-19)
+
+
+### Bug Fixes
+
+* update babelrc to be able to use some ES6+ features (async/await) ([b767ec1](https://github.com/antoine-amara/staticpack/commit/b767ec1441b8733b0fc8215a1afcd8d99da386ee))
+
 ### [0.2.1](https://github.com/antoine-amara/staticpack/compare/v0.2.0...v0.2.1) (2019-08-30)
 
 
