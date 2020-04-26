@@ -13,7 +13,8 @@
     "package": "rm -f website.zip && yarn build && cd dist/ && bestzip ../website.zip *",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint --fix ./src/js/*.js",
-    "test": "echo \"test NOT IMPLEMENTED\""
+    "test": "echo \"test NOT IMPLEMENTED\"",
+    "analyze-bundle": "yarn --silent build --profile --json > stats.json && webpack-bundle-analyzer stats.json ./dist/ -O -h 0.0.0.0 -p 9042"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -43,6 +44,7 @@
     "style-loader": "^1.2.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.7.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"

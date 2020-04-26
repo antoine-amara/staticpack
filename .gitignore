@@ -85,3 +85,6 @@ dist/
 
 # Website archive for production output
 website.zip
+
+# Webpack analyser stats file
+stats.json
