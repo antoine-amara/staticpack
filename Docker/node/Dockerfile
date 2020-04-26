@@ -1,4 +1,4 @@
-FROM node:12.14.1-alpine3.11
+FROM node:12.16.2-alpine3.11
 
 LABEL Author="Antoine AMARA <amara.antoine@gmail.com>"
 
