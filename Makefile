@@ -20,7 +20,7 @@ package: ## build the production bundle and zip it as website.zip.
 	${DC} run --rm node ${YN} package
 
 clean: ## clean builded assets
-	${DC} run --rm node rm -rf ./dist/ ./website.zip
+	${DC} run --rm node rm -rf ./dist/ ./website.zip ./stats.json
 
 check:	## run the linter to check code formating and unit tests to check javascripts libs.
 	${MAKE} style
@@ -51,11 +51,14 @@ destroy:	## switch off and destroy the development server instance. This command
 release:	## create a release, increment the version into package.json, create the Changelog, and finally create a git tag and commit it.
 	${DC} run --rm node ${YN} release
 
+analyze:	## build the production bundle and run the bundle analyzer which will output an interactive treemap representing your bundle.
+	${DC} run -p 9042:9042 --rm  node ${YN} analyze-bundle
+
 help:		## show this help.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
 .PHONY: 
-	init run watch package clean check style test restart command dependencies logs destroy release
+	init run watch package clean check style test restart command dependencies logs destroy release analyze help
 .SILENT: 
-	init run watch package clean check style test restart command dependencies logs destroy release
+	init run watch package clean check style test restart command dependencies logs destroy release analyze help
