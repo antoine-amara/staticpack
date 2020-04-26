@@ -42,13 +42,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jp(e*)g)$/,
+        test: /\.(png|jp(e*)g|svg)$/,
         use: [{
           loader: 'url-loader',
           options: {
             limit: 8192, // Convert images < 8kb to base64 strings
             name: '[hash]-[name].[ext]',
-            outputPath: 'img'
+            outputPath: 'img',
+            esModule: false
           }
         }]
       },

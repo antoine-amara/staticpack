@@ -49,6 +49,42 @@ If you want to see all available commands to manipulate the development environm
 make help
 ```
 
+## Images management and bundling
+
+Staticpack can manage and bundle your images (png, svg and jp(e)g formats), follow this little guide to be able to add your images into HTML and css for bundling them.
+
+### SVG management
+
+The better way to use your SVG images or icons is to adding them to your HTML to let staticpack inlining them into the HTML.
+Here is an example of inlining `img/github.svg`:
+
+**src/index.html**
+```html
+<img inline src="./img/github.svg">
+```
+
+> Note: the plugin will watch for svg from the root of the project, so the valid path for your assets is `./src/img/`.
+
+### Images management
+
+For classic image import (png and jpg), you have to add templating to let staticpack resolve them when the bundle is created.
+
+Here is an example of importing `img/example.png` into your HTML:
+
+**src/index.html**
+```html
+<img src="<%= require('./img/example.png') %>" />
+```
+
+Finally, an example of importing `img/example.png` as a background image in a css stylesheet:
+
+**src/css/main.css**
+```css
+.rule {
+  background-image: url('~../img/example.png');
+}
+```
+
 ## Test the website in production mode
 
 Webpack can bundle your website for production with some optimization, to be sure the website work in this mode you can run the command:
