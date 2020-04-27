@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/antoine-amara/staticpack/compare/v0.3.0...v0.4.0) (2020-04-27)
+
+
+### Features
+
+* add analyze command ([3b2cd7e](https://github.com/antoine-amara/staticpack/commit/3b2cd7e3d745e7605ebb8f7a68a47ceff2d64408))
+* be able to run watch mode and run mode at the same time ([76623c9](https://github.com/antoine-amara/staticpack/commit/76623c92fb561105a876bfef791bdd6f8c5fea7e))
+* minimize html file ([feb83ac](https://github.com/antoine-amara/staticpack/commit/feb83ac1d4394154c588bd355fa15401e29ee5a1))
+
+
+### Bug Fixes
+
+* manage image bundling ([a03a13f](https://github.com/antoine-amara/staticpack/commit/a03a13fb3e0c9ac77375f1d0d746e96eacb1100d))
+
 ## [0.3.0](https://github.com/antoine-amara/staticpack/compare/v0.2.1...v0.3.0) (2020-01-19)
 
 
