@@ -21,7 +21,7 @@
     "@babel/preset-env": "^7.9.5",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
-    "bestzip": "^2.1.5",
+    "bestzip": "^2.1.7",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "core-js": "^3.6.5",
