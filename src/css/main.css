@@ -116,7 +116,7 @@ footer {
 .repo-infos svg,
 footer svg {
   width: 25px;
-  min-height: 25px;
+  height: 25px;
   margin-right: var(--staticpack-xs-spacing);
   margin-left: var(--staticpack-xs-spacing);
   fill: var(--staticpack-blue-light);

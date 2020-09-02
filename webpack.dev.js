@@ -1,7 +1,7 @@
 // webpack v4
 // specific rules to build development bundle.
 
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
 
 const { HotModuleReplacementPlugin } = require('webpack')
