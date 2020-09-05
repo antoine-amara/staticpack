@@ -8,9 +8,8 @@
 :root {
   --staticpack-blue: #007abc;
   --staticpack-blue-light: #8dd4fa;
-  --staticpack-white: #ffffff;
+  --staticpack-white: #fff;
   --staticpack-black: #212529;
-  
   --staticpack-xs-spacing: 5px;
   --staticpack-md-spacing: 20px;
 }
@@ -50,7 +49,7 @@ ul li > span {
 }
 
 .truelie-font {
-  font-family: 'True Lies'
+  font-family: 'True Lies', sans-serif;
 }
 
 header {
@@ -71,7 +70,6 @@ header {
   right: 0;
   display: flex;
   margin: var(--staticpack-md-spacing);
-  display: flex;
   align-items: center;
 }
 
@@ -96,7 +94,8 @@ header {
   margin-right: var(--staticpack-xs-spacing);
 }
 
-header, footer {
+header,
+footer {
   background-color: var(--staticpack-blue);
 }
 
@@ -113,8 +112,8 @@ footer {
   margin-top: auto;
 }
 
-.repo-infos svg,
-footer svg {
+footer svg,
+.repo-infos svg {
   width: 25px;
   height: 25px;
   margin-right: var(--staticpack-xs-spacing);
