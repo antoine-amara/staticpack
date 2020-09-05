@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'True Lies';
-  src: url('/fonts/TrueLies.ttf') format('truetype');
+  src: url('../fonts/TrueLies.ttf') format('truetype');
 }
 
 /* Variables */
