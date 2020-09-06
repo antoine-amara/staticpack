@@ -56,11 +56,7 @@ module.exports = {
         test: /\.(ttf|eot|woff|woff2)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              name: 'fonts/[name].[ext]',
-              publicPath: './src/'
-            }
+            loader: 'file-loader'
           }
         ]
       }
@@ -72,31 +68,24 @@ module.exports = {
       filename: '[name].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
-      inject: false,
-      hash: true,
-      template: './src/index.html',
       filename: 'index.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+      template: 'src/index.html',
+      chunks: ['main']
     }),
     new HtmlWebpackInlineSVGPlugin({
       runPreEmit: true
     }),
-    new CopyWebpackPlugin([
-      { from: './src/browserconfig.xml', to: './' },
-      { from: './src/favicon.ico', to: './' },
-      { from: './src/humans.txt', to: './' },
-      { from: './src/icon.png', to: './' },
-      { from: './src/robots.txt', to: './' },
-      { from: './src/site.webmanifest', to: './' },
-      { from: './src/tile-wide.png', to: './' },
-      { from: './src/tile.png', to: './' }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/browserconfig.xml', to: './' },
+        { from: './src/favicon.ico', to: './' },
+        { from: './src/humans.txt', to: './' },
+        { from: './src/icon.png', to: './' },
+        { from: './src/robots.txt', to: './' },
+        { from: './src/site.webmanifest', to: './' },
+        { from: './src/tile-wide.png', to: './' },
+        { from: './src/tile.png', to: './' }
+      ]
+    })
   ]
 }

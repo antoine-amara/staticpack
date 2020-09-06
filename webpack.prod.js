@@ -1,7 +1,7 @@
 // webpack v4
 // specific rules to build optimized bundle for production.
 
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
 
 const TerserPlugin = require('terser-webpack-plugin')
