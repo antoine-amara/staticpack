@@ -48,8 +48,8 @@ logs:	## display logs from the development server. This command can be used only
 destroy:	## switch off and destroy the development server instance. This command can be used only on watch mode.
 	${DC} down
 
-release:	## create a release, increment the version into package.json, create the Changelog, and finally create a git tag and commit it.
-	${DC} run --rm node ${YN} release
+release:	## create a release with a target (major, minor or patch), increment the version into package.json, create the Changelog, and finally create a git tag and commit it. example to release a minor: 'make release target="minor"'.
+	${DC} run --rm node ${YN} release -- --release-as ${target}
 
 analyze:	## build the production bundle and run the bundle analyzer which will output an interactive treemap representing your bundle.
 	${DC} run -p 9042:9042 --rm  node ${YN} analyze-bundle
