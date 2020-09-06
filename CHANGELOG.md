@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/antoine-amara/staticpack/compare/v0.4.0...v0.5.0) (2020-09-06)
+
+
+### Features
+
+* add a css linter ([1cd731d](https://github.com/antoine-amara/staticpack/commit/1cd731d3b68028b5f6adb12ee46348797b335560))
+* improve css bundling ([6ca3dd8](https://github.com/antoine-amara/staticpack/commit/6ca3dd8373d1272341bc0c10a2867a124b7011b8))
+* mutualize browser compatibility with browserlistrc ([8df0fb3](https://github.com/antoine-amara/staticpack/commit/8df0fb3925c87b6c6e6e58675a957ab91141ab8f))
+* simplify the release command ([8e7bbc9](https://github.com/antoine-amara/staticpack/commit/8e7bbc97cd7069c52f8f33785197982a188b2001))
+
 ## [0.4.0](https://github.com/antoine-amara/staticpack/compare/v0.3.0...v0.4.0) (2020-04-27)
 
 
