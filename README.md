@@ -51,7 +51,7 @@ make help
 
 ## Images management and bundling
 
-Staticpack can manage and bundle your images (png, svg and jp(e)g formats), follow this little guide to be able to add your images into HTML and css for bundling them.
+Staticpack can manage and bundle your images (PNG, SVG and JP(E)G formats), follow this little guide to be able to add your images into HTML and CSS for bundling them.
 
 ### SVG management
 
@@ -60,14 +60,14 @@ Here is an example of inlining `img/github.svg`:
 
 **src/index.html**
 ```html
-<img inline src="./img/github.svg">
+<img inline src="./src/img/github.svg">
 ```
 
 > Note: the plugin will watch for svg from the root of the project, so the valid path for your assets is `./src/img/`.
 
 ### Images management
 
-For classic image import (png and jpg), you have to add templating to let staticpack resolve them when the bundle is created.
+For classic image import (PNG and JPG), you have to add templating to let staticpack resolve them when the bundle is created.
 
 Here is an example of importing `img/example.png` into your HTML:
 
@@ -76,7 +76,7 @@ Here is an example of importing `img/example.png` into your HTML:
 <img src="<%= require('./img/example.png') %>" />
 ```
 
-Finally, an example of importing `img/example.png` as a background image in a css stylesheet:
+Finally, an example of importing `img/example.png` as a background image in a CSS stylesheet:
 
 **src/css/main.css**
 ```css
@@ -84,6 +84,58 @@ Finally, an example of importing `img/example.png` as a background image in a cs
   background-image: url('~../img/example.png');
 }
 ```
+
+## HTML template management and bundling
+
+Each page of the website is managed like an html template, to be able to include one bundled JS script and CSS stylesheet.
+
+To add a new HTML page, just copy/paste the existing `index.html` and rename it.
+For example to create a `404.html page`:
+
+```shell
+cp ./index.html 404.html
+```
+
+> **Note**: don't forget to update the content of the template like the title or meta tags.
+
+Now, create an associated JS script for your new page:
+
+```shell
+touch 404-script.js
+```
+
+Finally, to add your page and script to your bundle, update the `webpack.comon.js`:
+
+```js
+// webpack v4
+// comon configuration between development and production bundle.
+
+// ... all imports
+
+module.exports = {
+  entry: { 
+    main: './src/js/index.js',
+    scriptJs404: './src/404-script.js'
+  },
+  // ...
+  plugins: [
+    // ...
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html',
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: 'src/404.html',
+      chunks: ['scriptJs404']
+    }),
+    // ...
+  ]
+}
+```
+
+> **Note**: we use the `chunks` option to associate one specific JS script for each HTML page of the website.
 
 ## Test the website in production mode
 
@@ -97,7 +149,7 @@ make run
 
 ## Create a production ready archive
 
-To build and package an optimized bundle for production just used the `package` command.
+To build, package an optimized bundle for production just used the `package` command.
 
 ```shell
 make package
