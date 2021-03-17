@@ -23,9 +23,7 @@ package: ## build the production bundle and zip it as website.zip.
 clean: ## clean builded assets
 	${DC} run --rm ${WEBSITE} rm -rf ./dist/ ./website.zip ./stats.json
 
-check:	## run the linter to check code formating and unit tests to check javascripts libs.
-	${MAKE} style
-	${MAKE} test
+check: style test	## run the linter to check code formating and unit tests to check javascripts libs.
 
 style:	## run the linter to check code formating.
 	${DC} run --rm ${WEBSITE} ${YN} lint
@@ -33,9 +31,7 @@ style:	## run the linter to check code formating.
 test:	## run the unit tests to check javascript libs.
 	${DC} run --rm ${WEBSITE} ${YN} test
 
-restart:	## restart the development environment. This command can be used only on watch mode.
-	${DC} stop
-	${MAKE} watch
+restart: destroy watch	## restart the development environment. This command can be used only on watch mode.
 
 command:	## run a command inside the development environment, pass your command with cmd=<your command> arg. (nodejs LTS runtime and yarn package manager are available).
 	${DC} run --rm ${WEBSITE} ${cmd}
