@@ -162,3 +162,13 @@ If you want to clean your development environment and delete the `dist` folder a
 ```shell
 make clean
 ```
+
+## Deploy the website with terraform
+
+You can automatically deploy the production bundle to a bucket on Google Cloud Platform.
+After the configuration of your GCP environment (project, service account, credentials key, and IAM), and the configs.env file, just launch the command:
+
+```shell
+make gcp-deploy
+```
+> **Note:** you can follow [this guide](./deploy/gcp/guide/deployment-configuration.md) to configure the GCP environment and the configs.env before launching the local deployment.
