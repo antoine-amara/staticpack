@@ -10,7 +10,7 @@
 
 A reusable development environment for a 100% static website or template.
 
-The website is just pure HTML5/CSS3 and Javascript. The final build is managed and created with Webpack4.
+The website is just pure HTML5/CSS3 and Javascript. The final build is managed and created with Webpack 5.
 This repo gives a complete development environment for developers who want to construct a static website. All this stuff runs with makefiles command inside Docker containers. Moreover, we use webpack to bundle the website and webpack-dev-server to run a development server.
 
 ## Run the development environment
@@ -19,13 +19,13 @@ This repo gives a complete development environment for developers who want to co
 * [how to install docker](https://docs.docker.com/install/)
 * [how to install docker-compose](https://docs.docker.com/compose/install/)
 
-The first time you want to run the development environment, you need to build it and install his dependencies. For that, just run the command:
+The first time you want to run the development environment, you need to build it and install his dependencies. Run the command:
 
 ```shell
 make init
 ```
 
-Note: this command runs the environment in watch mode, so, a live reload is available in the browser when you update files.
+> **Note**: this command runs the environment in watch mode, note a live reload is available in the browser when you update files.
 
 If the environment was already initialized, just run the `watch` command to rerun it.
 
@@ -43,7 +43,7 @@ make destroy
 
 Note this command will stop the development environment but it doesn't destroy dependencies or configurations.
 
-If you want to see all available commands to manipulate the development environment, just use `help` command:
+If you want to see all available commands, just use `help` command:
 
 ```shell
 make help
@@ -51,11 +51,11 @@ make help
 
 ## Images management and bundling
 
-Staticpack can manage and bundle your images (PNG, SVG and JP(E)G formats), follow this little guide to be able to add your images into HTML and CSS for bundling them.
+Staticpack can manage and bundle your images (PNG, SVG and JP(E)G formats), follow this guide to be able to add your images into HTML and CSS for bundling them.
 
 ### SVG management
 
-The better way to use your SVG images or icons is to adding them to your HTML to let staticpack inlining them into the HTML.
+The better way to use your SVG images or icons is to adding them to your HTML to let staticpack inlining them.
 Here is an example of inlining `img/github.svg`:
 
 **src/index.html**
@@ -63,7 +63,7 @@ Here is an example of inlining `img/github.svg`:
 <img inline src="./src/img/github.svg">
 ```
 
-> Note: the plugin will watch for svg from the root of the project, so the valid path for your assets is `./src/img/`.
+> **Note**: the plugin will watch for svg from the root of the project, so the valid path for your assets is `./src/img/`.
 
 ### Images management
 
@@ -107,7 +107,7 @@ touch 404-script.js
 Finally, to add your page and script to your bundle, update the `webpack.comon.js`:
 
 ```js
-// webpack v4
+// webpack v5
 // comon configuration between development and production bundle.
 
 // ... all imports
