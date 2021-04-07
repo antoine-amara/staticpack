@@ -9,7 +9,8 @@ RUN apk update && apk add yarn git
 RUN npm install --global generate generate-license
 
 # Hack to avoid executing comand as root user
-USER 1000:1000
+RUN adduser --disabled-password --uid 1000 statickpack
+USER statickpack
 
 EXPOSE 9000
 EXPOSE 9042
