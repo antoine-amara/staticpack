@@ -52,6 +52,12 @@ logs:	## display logs from the development server. This command can be used only
 destroy:	## switch off and destroy the development server instance. This command can be used only on watch mode.
 	${DC} down
 
+release-github:	## create a release push on master and create a github release with the git meta-data. example to release a minor: 'make github-release gh-token="<token>" target="minor"'
+	git checkout master
+	${MAKE} release target=${target}
+	git push --tags origin master
+	${DC} run --rm -e CONVENTIONAL_GITHUB_RELEASER_TOKEN=${gh-token} ${WEBSITE} ${YN} release-github
+
 release:	## create a release with a target (major, minor or patch), increment the version into package.json, create the Changelog, and finally create a git tag and commit it. example to release a minor: 'make release target="minor"'.
 	${DC} run -v ~/.gitconfig:/etc/gitconfig --rm ${WEBSITE} ${YN} release -- --release-as ${target}
 
@@ -75,6 +81,6 @@ help:		## show this help.
 
 
 .PHONY: 
-	init run watch package clean check style test restart command dependencies logs destroy release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help
+	init run watch package clean check style test restart command dependencies logs destroy release-github release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help
 .SILENT: 
-	init run watch package clean check style test restart command dependencies logs destroy release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help
+	init run watch package clean check style test restart command dependencies logs destroy release-github release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help

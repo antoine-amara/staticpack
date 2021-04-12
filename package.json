@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "release": "standard-version",
+    "release-github": "conventional-github-releaser -p angular",
     "serve": "yarn build && http-server ./dist -a 0.0.0.0 -p 3000",
     "serve:dev": "webpack serve --config webpack.dev.js",
     "package": "rm -f website.zip && yarn build && cd dist/ && bestzip ../website.zip *",
@@ -25,6 +26,7 @@
     "babel-loader": "^8.2.2",
     "bestzip": "^2.2.0",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "conventional-github-releaser": "^3.1.5",
     "copy-webpack-plugin": "^8.1.1",
     "core-js": "^3.10.1",
     "css-loader": "^5.2.1",
@@ -55,6 +57,7 @@
     "webpack-merge": "^5.7.3"
   },
   "resolutions": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "dot-prop": "^4.2.1"
   }
 }
