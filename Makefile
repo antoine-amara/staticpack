@@ -53,7 +53,7 @@ destroy:	## switch off and destroy the development server instance. This command
 	${DC} down
 
 release:	## create a release with a target (major, minor or patch), increment the version into package.json, create the Changelog, and finally create a git tag and commit it. example to release a minor: 'make release target="minor"'.
-	${DC} run --rm ${WEBSITE} ${YN} release -- --release-as ${target}
+	${DC} run -v ~/.gitconfig:/etc/gitconfig --rm ${WEBSITE} ${YN} release -- --release-as ${target}
 
 analyze:	## build the production bundle and run the bundle analyzer which will output an interactive treemap representing your bundle.
 	${DC} run -p 9042:9042 --rm  ${WEBSITE} ${YN} analyze-bundle
