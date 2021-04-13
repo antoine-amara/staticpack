@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/antoine-amara/staticpack/compare/v0.5.0...v0.6.0) (2021-04-13)
+
+
+### Features
+
+* add a command to publish a release on Github ([0702070](https://github.com/antoine-amara/staticpack/commit/0702070d7e159f9e52345ca0b0587e47a80ac854))
+* deploy the bundle to GCP with terraform ([a221aa7](https://github.com/antoine-amara/staticpack/commit/a221aa7e0160c7eb27ea6f428365c5b95922b4a6))
+* migrate to webpack 5 ([243822e](https://github.com/antoine-amara/staticpack/commit/243822e1d1541995f9f10dd020729bf2c31a2756))
+* **docker:** change user management in docker image ([96cd0fa](https://github.com/antoine-amara/staticpack/commit/96cd0faf60c38c1dd901cd5ff25d937a5a64b990))
+
+
+### Bug Fixes
+
+* makefile release command need git user ([f3ce51e](https://github.com/antoine-amara/staticpack/commit/f3ce51e2df61ed5c1dfecc657c801d05738081f5))
+
 ## [0.5.0](https://github.com/antoine-amara/staticpack/compare/v0.4.0...v0.5.0) (2020-09-06)
 
 

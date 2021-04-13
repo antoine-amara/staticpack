@@ -2,7 +2,7 @@
   "name": "staticpack",
   "description": "A reusable development environment for a 100% static website or template.",
   "repository": "https://github.com/antoine-amara/staticpack",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": "Antoine Amara <amara.antoine@gmail.com>",
   "license": "GPLv3.0",
   "private": true,
