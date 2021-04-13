@@ -1,4 +1,4 @@
-// webpack v4
+// webpack v5
 // comon configuration between development and production bundle.
 
 const path = require('path')
@@ -12,7 +12,7 @@ module.exports = {
   entry: { main: './src/js/index.js' },
   output: {
     path: path.resolve(process.cwd(), 'dist'),
-    filename: '[name].[hash].js'
+    filename: '[name].[contenthash].js'
   },
   module: {
     rules: [
@@ -30,14 +30,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: path.resolve(process.cwd(), 'postcss.config.js')
-              }
-            }
-          }
+          'postcss-loader'
         ]
       },
       {
@@ -46,7 +39,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 8192, // Convert images < 8kb to base64 strings
-            name: '[hash]-[name].[ext]',
+            name: '[contenthash]-[name].[ext]',
             outputPath: 'img',
             esModule: false
           }

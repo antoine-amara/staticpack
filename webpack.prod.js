@@ -1,4 +1,4 @@
-// webpack v4
+// webpack v5
 // specific rules to build optimized bundle for production.
 
 const { merge } = require('webpack-merge')
@@ -13,9 +13,7 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
+        parallel: true
       }),
       new OptimizeCSSAssetsPlugin({})
     ]

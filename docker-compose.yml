@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  node:
-    image: nodejs-yarn
+  website:
+    image: staticpack-nodejs-yarn
     build:
       context: ./Docker/node
     volumes:
