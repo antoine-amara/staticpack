@@ -1,4 +1,4 @@
-FROM node:14.16.0-alpine3.11
+FROM node:16.13-alpine3.14
 
 LABEL Author="Antoine AMARA <amara.antoine@gmail.com>"
 
@@ -9,8 +9,7 @@ RUN apk update && apk add yarn git
 RUN npm install --global generate generate-license
 
 # Hack to avoid executing comand as root user
-RUN adduser --disabled-password --uid 1000 statickpack
-USER statickpack
+USER node
 
 EXPOSE 9000
 EXPOSE 9042
