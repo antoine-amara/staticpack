@@ -64,6 +64,10 @@ release:	## create a release with a target (major, minor or patch), increment th
 analyze:	## build the production bundle and run the bundle analyzer which will output an interactive treemap representing your bundle.
 	${DC} run -p 9042:9042 --rm  ${WEBSITE} ${YN} analyze-bundle
 
+reset-linter:
+	${DC} run --rm ${WEBSITE} npm uninstall eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise
+	${DC} run --rm ${WEBSITE} npx eslint --init
+
 build-gcp-image:	## build the docker image used to deploy the static assets to gcp with terraform.
 	docker build ./Docker/gcp-terraform --tag staticpack-gcp-terraform:332.0.0-alpine
 
