@@ -14,11 +14,16 @@
     "package": "rm -f website.zip && yarn build && cd dist/ && bestzip ../website.zip *",
     "build": "webpack --config webpack.prod.js",
     "lint": "yarn lint:js && yarn lint:css",
-    "lint:js": "eslint --fix ./src/js/*.js",
-    "lint:css": "stylelint --fix 'src/css/*.css'",
-    "format": "prettier --write src",
+    "lint:js": "eslint ./src/js/*.js",
+    "lint:css": "stylelint 'src/css/*.css'",
+    "lint:fix": "yarn lint:js:fix && yarn lint:css:fix",
+    "lint:js:fix": "eslint --fix ./src/js/*.js",
+    "lint:css:fix": "stylelint --fix 'src/css/*.css'",
+    "format": "prettier --check src",
+    "format:fix": "prettier --write src",
     "test": "jest --config=./jest.config.js src/",
-    "analyze-bundle": "yarn --silent build --profile --json > stats.json && webpack-bundle-analyzer stats.json ./dist/ -O -h 0.0.0.0 -p 9042"
+    "analyze-bundle": "yarn --silent build --profile --json > stats.json && webpack-bundle-analyzer stats.json ./dist/ -O -h 0.0.0.0 -p 9042",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
@@ -59,7 +64,8 @@
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "husky": "^7.0.0"
   },
   "resolutions": {
     "follow-redirects": "^1.14.8",
