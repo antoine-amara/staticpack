@@ -30,7 +30,8 @@ clean: ## clean builded assets
 
 check: style test	## run the linter to check code formating and unit tests to check javascripts libs.
 
-style:	## run the linter to check code formating.
+style:	## run the linter and prettier to enforce code formating.
+	${DC} run --rm ${WEBSITE} ${YN} format
 	${DC} run --rm ${WEBSITE} ${YN} lint
 	${DEPLOY} terraform fmt -write=true -recursive .
 	${DEPLOY} terraform validate
