@@ -2,10 +2,9 @@
   <img width="371" height="127" src="./logo.png">
 </p>
 
-![Licence Badge](https://badgen.net/badge/License/GPLv3.0/green)
-![JS Style](https://badgen.net/badge/JS/Standard/yellow)
-![CSS Style](https://badgen.net/badge/CSS/BEM/blue)
-![Webpack](https://badgen.net/badge/webpack/v4/blue)
+![Licence Badge](https://img.shields.io/badge/license-MIT-brightgreen)
+![JS Style](https://img.shields.io/badge/style-standard-yellow)
+![Webpack](https://img.shields.io/badge/webpack-v5-informational)
 ![Docker](https://badgen.net/badge/icon/docker-compose?icon=docker&label)
 
 A reusable development environment for a 100% static website or template.
