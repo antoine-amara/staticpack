@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/antoine-amara/staticpack/compare/v0.6.0...v0.7.0) (2022-03-06)
+
+
+### Features
+
+* **command:** add linter reset command ([5c4461b](https://github.com/antoine-amara/staticpack/commit/5c4461b315d304f64c34e108b644cec413eb23ff))
+* **license:** change license to MIT ([35c97b0](https://github.com/antoine-amara/staticpack/commit/35c97b0692c7ee50f218b678499a1a4796bc061e))
+* **tools:** add husky hook ([a7a47e4](https://github.com/antoine-amara/staticpack/commit/a7a47e43a1f45a137c03e53d246d0022b278aa89))
+* **tools:** add prettier ([0e4286c](https://github.com/antoine-amara/staticpack/commit/0e4286c7404d04c25fa1990712635b8666748e39))
+* **webpack:** upgrade config from breacking change ([92e6eea](https://github.com/antoine-amara/staticpack/commit/92e6eea5bd81cda06fa1d2ed7a84e567edc9114b))
+
+
+### Bug Fixes
+
+* **docker:** user management ([e13b8f7](https://github.com/antoine-amara/staticpack/commit/e13b8f7f053c535c348e3336b88494d6ad209fd0))
+
 ## [0.6.0](https://github.com/antoine-amara/staticpack/compare/v0.5.0...v0.6.0) (2021-04-13)
 
 
