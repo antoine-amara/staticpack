@@ -34,6 +34,10 @@ module.exports = {
         ]
       },
       {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        type: 'asset/resource'
+      },
+      {
         test: /\.(png|jp(e*)g|svg)$/,
         use: [{
           loader: 'url-loader',
@@ -44,14 +48,6 @@ module.exports = {
             esModule: false
           }
         }]
-      },
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader'
-          }
-        ]
       }
     ]
   },

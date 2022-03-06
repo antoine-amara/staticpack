@@ -1,6 +1,8 @@
+@import "./bootstrap-reboot.css";
+
 @font-face {
-  font-family: 'True Lies';
-  src: url('../fonts/TrueLies.ttf') format('truetype');
+  font-family: "True Lies";
+  src: url("../fonts/TrueLies.ttf") format("truetype");
 }
 
 /* Variables */
@@ -49,7 +51,7 @@ ul li > span {
 }
 
 .truelie-font {
-  font-family: 'True Lies', sans-serif;
+  font-family: "True Lies", sans-serif;
 }
 
 header {
@@ -139,5 +141,3 @@ footer svg,
   font-weight: 800;
   color: var(--staticpack-blue);
 }
-
-@import './bootstrap-reboot.css';

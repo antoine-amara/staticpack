@@ -1,7 +1,7 @@
 DC = docker-compose
 YN = yarn
 WEBSITE = website
-DEPLOY = docker run -it --env-file ${PWD}/deploy/gcp/configs.env -v ${PWD}/deploy/gcp/:/deploy/ -v ${PWD}/dist/:/dist/ -w /deploy/ --rm staticpack-gcp-terraform:332.0.0-alpine
+DEPLOY = docker run -t --env-file ${PWD}/deploy/gcp/configs.env -v ${PWD}/deploy/gcp/:/deploy/ -v ${PWD}/dist/:/dist/ -w /deploy/ --rm staticpack-gcp-terraform:332.0.0-alpine
 
 default: help;
 
@@ -11,6 +11,8 @@ init:	## build, install dependencies and run the development environment. The en
 	${DC} up -d
 	${DC} ps
 	cp ./deploy/gcp/configs.env.dist ./deploy/gcp/configs.env
+	${MAKE} build-gcp-image
+	${MAKE} gcp-init
 
 run:	## build the production bundle and run it.
 	${DC} run -p 3000:3000 --rm ${WEBSITE} ${YN} serve
@@ -31,7 +33,13 @@ clean: ## clean builded assets
 check: style test	## run the linter to check code formating and unit tests to check javascripts libs.
 
 style:	## run the linter to check code formating.
-	${DC} run --rm ${WEBSITE} ${YN} lint
+	${DC} run --rm -T ${WEBSITE} ${YN} lint
+	${DC} run --rm -T ${WEBSITE} ${YN} format
+	${DEPLOY} terraform validate
+
+stylefix:	## run the linter and prettier to enforce code formating.
+	${DC} run --rm ${WEBSITE} ${YN} format
+	${DC} run --rm ${WEBSITE} ${YN} lint:fix
 	${DEPLOY} terraform fmt -write=true -recursive .
 	${DEPLOY} terraform validate
 
@@ -63,6 +71,10 @@ release:	## create a release with a target (major, minor or patch), increment th
 
 analyze:	## build the production bundle and run the bundle analyzer which will output an interactive treemap representing your bundle.
 	${DC} run -p 9042:9042 --rm  ${WEBSITE} ${YN} analyze-bundle
+
+reset-linter:
+	${DC} run --rm ${WEBSITE} npm uninstall eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise
+	${DC} run --rm ${WEBSITE} npx eslint --init
 
 build-gcp-image:	## build the docker image used to deploy the static assets to gcp with terraform.
 	docker build ./Docker/gcp-terraform --tag staticpack-gcp-terraform:332.0.0-alpine
